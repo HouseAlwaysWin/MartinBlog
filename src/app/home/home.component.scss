@@ -1,21 +1,37 @@
+@import "../../styles.scss";
+
 .home {
   display: flex;
   flex: row wrap;
+  &_nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  & ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    & li {
+      cursor: pointer;
+      margin-top: 1rem;
+      border-bottom: 0.3rem solid $color-grey-dark;
+      width: 100%;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
 
   &_tags {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
-    & ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      & li {
-        cursor: pointer;
-        margin-top: 1rem;
-      }
-    }
+    width: 100%;
   }
 
   &_posts {
@@ -25,6 +41,9 @@
     align-items: center;
     & ul {
       list-style: none;
+      & li {
+        padding: 3rem;
+      }
     }
   }
 
@@ -32,3 +51,9 @@
     flex: 1;
   }
 }
+
+// .cross-line {
+//   padding: 1rem;
+//   border-bottom: 0.3rem solid $color-grey-dark;
+//   width: 100%;
+// }

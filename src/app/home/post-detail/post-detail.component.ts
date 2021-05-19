@@ -1,15 +1,40 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PostListItem } from 'src/app/models/post-list-item';
 
 @Component({
-  selector: 'app-post-detail',
+  selector: 'post-detail',
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
-
-  constructor() { }
+  title: string;
+  content: string;
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      let post: PostListItem = JSON.parse(params["post"]);
+      console.log(post);
+      if (post?.htmlName) {
+        this.getHtmlContent(post.htmlName);
+      }
+    })
+  }
+
+  getHtmlContent(name: string) {
+    const headers = new HttpHeaders({
+      Accept: 'text/html',
+    });
+
+    this.http.get(`assets/blog-data/posts/${name}.html`, { responseType: "text" }).subscribe(data => {
+      this.content = data;
+    });
+
   }
 
 }

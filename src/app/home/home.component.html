@@ -1,23 +1,24 @@
 <div class="home">
-  <div class="home_tags">
-    <h2>Tags</h2>
-    <ul>
-      <li>
-        <a>C#</a>
-      </li>
-      <li>
-        <a>C#</a>
-      </li>
-      <li>
-        <a>C#</a>
-      </li>
-    </ul>
+  <div class="home_nav">
+    <div class="home_tags">
+      <!-- <h2>Tags</h2>
+      <ul>
+        <li>
+          <a>C#</a>
+        </li>
+        <li>
+          <a>C#</a>
+        </li>
+        <li>
+          <a>C#</a>
+        </li>
+      </ul> -->
+    </div>
   </div>
   <div class="home_posts">
-    posts
     <ul>
-      <li>
-
+      <li *ngFor="let post of posts">
+        <post-list-item [post]="post"></post-list-item>
       </li>
     </ul>
   </div>

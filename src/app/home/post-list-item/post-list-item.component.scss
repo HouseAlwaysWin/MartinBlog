@@ -1,0 +1,48 @@
+@import "../../../styles.scss";
+.post {
+  display: flex;
+  flex-direction: column;
+
+  &-title {
+    font-size: 4rem;
+    font-weight: 900;
+  }
+
+  &-description {
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: 100;
+    margin-left: 1rem;
+  }
+
+  &-btn {
+    margin-top: 2rem;
+    &,
+    &:link,
+    &:visited {
+      font-size: 2rem;
+      background-color: $color-white;
+      border-radius: 1rem;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+        opacity: 0;
+      }
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
+  }
+}
