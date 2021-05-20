@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { PostListItem } from '../models/post-list-item';
 
 @Component({
@@ -29,7 +30,9 @@ export class HomeComponent implements OnInit {
 
     this.http.get<PostListItem[]>('assets/blog-data/posts.json')
       .pipe(
-
+        map((posts: PostListItem[]) => {
+          return posts.filter(p => p.published)
+        })
       )
       .subscribe(data => {
         console.log(data);

@@ -21,7 +21,15 @@
         <post-list-item [post]="post"></post-list-item>
       </li>
     </ul>
+
+    <div class="posts_page">
+      <p-paginator [rows]="10"
+                   [totalRecords]="100"></p-paginator>
+    </div>
+
   </div>
+
+
   <div class="home_empty">
   </div>
 

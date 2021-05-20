@@ -3,6 +3,7 @@
 .body {
   margin: 0;
   height: 100%;
+  display: grid;
   display: flex;
   flex-direction: column;
 }
@@ -86,10 +87,10 @@
   align-items: center;
   width: 100%;
   padding: 0.5rem 0;
-  // background-color: $color-black;
+  background-color: $color-black;
   border-top: 0.2rem solid $color-grey-dark;
   font-size: 1.6rem;
-  color: $color-black;
+  color: $color-white;
 
   & ul {
     display: flex;
@@ -102,8 +103,6 @@
       cursor: pointer;
 
       & a {
-        color: $color-black;
-
         &:hover {
           animation-name: moveInBottom;
           animation-duration: 1s;
@@ -111,7 +110,7 @@
         }
 
         & .fa-github {
-          color: black;
+          color: white;
         }
 
         & .fa-linkedin {

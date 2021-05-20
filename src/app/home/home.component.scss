@@ -50,6 +50,10 @@
   &_empty {
     flex: 1;
   }
+
+  & .posts_page {
+    margin-bottom: 1rem;
+  }
 }
 
 // .cross-line {

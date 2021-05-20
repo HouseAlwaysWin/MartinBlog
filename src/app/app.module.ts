@@ -13,6 +13,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { PostTagComponent } from './home/post-tag/post-tag.component';
 import { PostDetailComponent } from './home/post-detail/post-detail.component';
 import { HomeModule } from './home/home.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

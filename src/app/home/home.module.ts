@@ -5,13 +5,14 @@ import { PostTagComponent } from './post-tag/post-tag.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
   declarations: [HomeComponent, PostDetailComponent, PostTagComponent, PostListItemComponent],
   imports: [
-    CommonModule,
+    SharedModule,
     HomeRoutingModule
   ]
 })
