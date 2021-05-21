@@ -1,11 +1,32 @@
+@import "../../../styles.scss";
+
 .detail {
+  flex: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
   &-title {
-    font-size: 2rem;
+    font-size: 3rem;
+    margin: 5rem 0;
   }
 
   &-content {
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    line-height: 3rem;
+    font-size: 1.6rem;
+    & .highlight {
+      background-color: red;
+      color: $color-white;
+    }
+  }
+}
+
+.post-detail {
+  display: flex;
+  flex-direction: row;
+
+  & .empty {
+    flex: 1;
   }
 }

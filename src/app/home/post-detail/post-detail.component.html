@@ -1,8 +1,16 @@
-<div class="detail">
-  <div class="detail-title">
-    {{ title }}
+<div class="post-detail">
+
+  <div class="empty"></div>
+
+  <div class="detail">
+    <div class="detail-title">
+      {{ title }}
+    </div>
+    <div class="detail-content"
+         [innerHtml]="content">
+    </div>
   </div>
-  <div class="detail-content"
-       [innerHtml]="content">
-  </div>
+
+  <div class="empty"></div>
+
 </div>
