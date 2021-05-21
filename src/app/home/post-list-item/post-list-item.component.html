@@ -3,7 +3,10 @@
     {{ post.title }}
   </div>
   <div class="post-description">
-    {{ post.description }}
+    {{ post.description | textTrucate:150 }}
+  </div>
+  <div class="post-published-date">
+    發布日期: &nbsp; {{ post.publishDate }}
   </div>
   <a class="post-btn"
      (click)="goDetail(post)">

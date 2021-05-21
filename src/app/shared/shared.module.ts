@@ -4,9 +4,10 @@ import { DividerModule } from 'primeng/divider';
 import { MenuModule } from 'primeng/menu';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { PaginatorModule } from 'primeng/paginator';
+import { TextTrucatePipe } from './pipes/text-trucate.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [TextTrucatePipe],
   imports: [
     CommonModule
   ],
@@ -15,7 +16,8 @@ import { PaginatorModule } from 'primeng/paginator';
     DividerModule,
     MenuModule,
     ScrollTopModule,
-    PaginatorModule
+    PaginatorModule,
+    TextTrucatePipe
   ]
 })
 export class SharedModule { }

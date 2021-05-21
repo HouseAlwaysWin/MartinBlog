@@ -1,0 +1,10 @@
+.abount {
+  display: flex;
+  flex-direction: row;
+  & .conent {
+    flex: 3;
+  }
+  & .empty {
+    flex: 1;
+  }
+}
