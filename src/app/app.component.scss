@@ -36,7 +36,7 @@
       }
 
       & ul {
-        @media only screen and (max-width: 900px) {
+        @media only screen and (max-width: 800px) {
           margin-top: 1rem;
           display: flex;
           flex-direction: column;
@@ -65,7 +65,7 @@
           }
         }
 
-        @media only screen and (max-width: 1650px) {
+        @media only screen and (max-width: 1800px) {
           &.nav-home {
             transform: translate(-450%, 100%);
           }
