@@ -1,31 +1,30 @@
-<div class="body">
+<div class="container"
+     [ngClass]="showNav ? 'show-nav' :''">
+
+  <div class="cover">
+  </div>
+
+
+  <div class="circle-nav">
+    <div class="circle"
+         (click)="toggleNav()">
+      <button class="open">
+        <i class="fas fa-times"></i>
+      </button>
+      <button class="close">
+        <i class="
+              fas
+              fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+
   <header class="header">
     <div class="header-title">
       <h1>Martin's Blog</h1>
     </div>
-    <nav>
-      <div class="nav">
-        <ul>
-          <li>
-            <a routerLink="/">Home</a>
-          </li>
-          <li>
-            <a routerLink="/about"> About</a>
-          </li>
-          <li>
-            <a routerLink="/contact">Contact</a>
-          </li>
-          <li>
-            <a routerLink="/resume">resume</a>
-          </li>
-          <!-- <li>
-          <a routerLink="/playground">Playground</a>
-        </li> -->
-        </ul>
-      </div>
-    </nav>
   </header>
-
   <main>
     <div class="main">
       <router-outlet></router-outlet>
@@ -58,4 +57,37 @@
       Copyright &copy; by Martin Wang
     </div>
   </footer>
+
+
+
 </div>
+
+
+
+<nav>
+  <ul>
+    <li class="nav-home">
+      <i class="fas fa-home"></i>
+      <a routerLink="/"
+         (click)="toggleNav()">Home</a>
+    </li>
+    <li class="nav-about">
+      <i class="fas fa-user-alt"></i>
+      <a routerLink="/about"
+         (click)="toggleNav()"> About</a>
+    </li>
+    <li class="nav-contact">
+      <i class="fas fa-envelope"></i>
+      <a routerLink="/contact"
+         (click)="toggleNav()">Contact</a>
+    </li>
+    <li class="nav-resume">
+      <i class="fas fa-file-alt"></i>
+      <a routerLink="/resume"
+         (click)="toggleNav()">resume</a>
+    </li>
+    <!-- <li>
+          <a routerLink="/playground">Playground</a>
+        </li> -->
+  </ul>
+</nav>

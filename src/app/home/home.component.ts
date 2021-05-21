@@ -12,22 +12,21 @@ import { PostListItem } from '../models/post-list-item';
 })
 export class HomeComponent implements OnInit {
 
-  posts: PostListItem[];
+  posts: PostListItem[] = [];
+  postsAll: PostListItem[];
+  postTotalCount: number;
+  postPerPages: number = 10;
   constructor(
     private router: Router,
     private http: HttpClient) {
 
   }
-  ngOnInit(): void {
-    // const headers = new HttpHeaders({
-    //   Accept: 'text/html',
-    // });
-    // this.http.get('assets/blog-data/posts/firstpost.html', { responseType: "text" }).subscribe(data => {
-    //   this.posts = data;
-    //   console.log("getData");
-    //   console.log(data);
-    // });
 
+  ngOnInit(): void {
+    this.getPostsInit();
+  }
+
+  getPostsInit() {
     this.http.get<PostListItem[]>('assets/blog-data/posts.json')
       .pipe(
         map((posts: PostListItem[]) => {
@@ -35,9 +34,19 @@ export class HomeComponent implements OnInit {
         })
       )
       .subscribe(data => {
-        console.log(data);
-        this.posts = data;
+        this.postsAll = data;
+        this.postTotalCount = data.length;
+        this.posts = this.paginate(data, 1);
       })
+  }
+
+  paginate(data, pageNum) {
+    return data.slice((pageNum - 1) * this.postPerPages, pageNum * this.postPerPages)
+  }
+
+  onPageChange(e) {
+    this.posts = this.paginate(this.postsAll, e.page + 1)
+    console.log(this.posts);
   }
 
 

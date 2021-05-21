@@ -16,15 +16,17 @@
     </div>
   </div>
   <div class="home_posts">
-    <ul>
+    <ul *ngIf="posts.length > 0">
       <li *ngFor="let post of posts">
         <post-list-item [post]="post"></post-list-item>
       </li>
     </ul>
 
-    <div class="posts_page">
-      <p-paginator [rows]="10"
-                   [totalRecords]="100"></p-paginator>
+    <div class="posts_page"
+         *ngIf="posts.length > 0">
+      <p-paginator [rows]="postPerPages"
+                   [totalRecords]="postTotalCount"
+                   (onPageChange)="onPageChange($event)"></p-paginator>
     </div>
 
   </div>
